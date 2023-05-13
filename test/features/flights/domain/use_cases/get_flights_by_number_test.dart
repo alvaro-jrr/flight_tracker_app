@@ -23,11 +23,11 @@ void main() {
     useCase = GetFlightsByNumber(mockFlightsRepository);
   });
 
-  const tNumber = 'Test';
+  const tNumber = 1;
 
   final tFlights = Flights(flights: [
     Flight(
-      airline: const Airline('Test'),
+      airline: const Airline(name: 'Test'),
       arrival: Juncture(
         airport: 'Test',
         estimated: DateTime(2023),
@@ -42,7 +42,7 @@ void main() {
         timezone: 'Test',
       ),
       status: 'Test',
-      flightDescription: const FlightDescription('Test'),
+      flightDescription: const FlightDescription(number: 1),
     )
   ]);
 

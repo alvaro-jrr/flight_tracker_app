@@ -18,7 +18,7 @@ class GetFlightsByNumber implements UseCase<Flights, Params> {
 }
 
 class Params extends Equatable {
-  final String number;
+  final int number;
 
   const Params({required this.number});
 

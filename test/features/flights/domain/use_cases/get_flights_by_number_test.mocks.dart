@@ -40,7 +40,7 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
 class MockFlightsRepository extends _i1.Mock implements _i3.FlightsRepository {
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i6.Flights>> getFlightsByNumber(
-          String? number) =>
+          int? number) =>
       (super.noSuchMethod(
         Invocation.method(
           #getFlightsByNumber,
