@@ -1,0 +1,71 @@
+{
+	"pagination": {
+		"limit": 1,
+		"offset": 0,
+		"count": 1,
+		"total": 1
+	},
+	"data": [
+		{
+			"flight_date": "2019-12-12",
+			"flight_status": "Test",
+			"departure": {
+				"airport": "Test",
+				"timezone": "Test",
+				"iata": "Test",
+				"icao": "Test",
+				"terminal": "Test",
+				"gate": "Test",
+				"baggage": "Test",
+				"delay": 0,
+				"scheduled": "2019-12-12T04:20:00+00:00",
+				"estimated": "2019-12-12T04:20:00+00:00",
+				"actual": null,
+				"estimated_runway": null,
+				"actual_runway": null
+			},
+			"arrival": {
+				"airport": "Test",
+				"timezone": "Test",
+				"iata": "Test",
+				"icao": "Test",
+				"terminal": "Test",
+				"gate": "Test",
+				"baggage": "Test",
+				"delay": 0,
+				"scheduled": "2019-12-12T04:20:00+00:00",
+				"estimated": "2019-12-12T04:20:00+00:00",
+				"actual": null,
+				"estimated_runway": null,
+				"actual_runway": null
+			},
+			"airline": {
+				"name": "Test",
+				"iata": "Test",
+				"icao": "Test"
+			},
+			"flight": {
+				"number": "1",
+				"iata": "Test",
+				"icao": "Test",
+				"codeshared": null
+			},
+			"aircraft": {
+				"registration": "Test",
+				"iata": "Test",
+				"icao": "Test",
+				"icao24": "Test"
+			},
+			"live": {
+				"updated": "2019-12-12T10:00:00+00:00",
+				"latitude": 1.0,
+				"longitude": 1.0,
+				"altitude": 1.0,
+				"direction": 1.0,
+				"speed_horizontal": 1.0,
+				"speed_vertical": 1.0,
+				"is_ground": false
+			}
+		}
+	]
+}
