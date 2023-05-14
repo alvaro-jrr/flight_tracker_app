@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:flight_tracker_app/injection_container.dart' as di;
+
 void main() {
+  // Inject dependencies.
+  di.init();
+
   runApp(const MyApp());
 }
 
