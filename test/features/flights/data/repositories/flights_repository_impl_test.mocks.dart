@@ -8,7 +8,7 @@ import 'dart:async' as _i4;
 import 'package:flight_tracker_app/core/network/network_info.dart' as _i5;
 import 'package:flight_tracker_app/features/flights/data/data_sources/flights_remote_data_source.dart'
     as _i3;
-import 'package:flight_tracker_app/features/flights/domain/entities/flights.dart'
+import 'package:flight_tracker_app/features/flights/data/models/flights_model.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -23,8 +23,8 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeFlights_0 extends _i1.SmartFake implements _i2.Flights {
-  _FakeFlights_0(
+class _FakeFlightsModel_0 extends _i1.SmartFake implements _i2.FlightsModel {
+  _FakeFlightsModel_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -39,27 +39,28 @@ class _FakeFlights_0 extends _i1.SmartFake implements _i2.Flights {
 class MockFlightsRemoteDataSource extends _i1.Mock
     implements _i3.FlightsRemoteDataSource {
   @override
-  _i4.Future<_i2.Flights> getFlightsByNumber(int? number) =>
+  _i4.Future<_i2.FlightsModel> getFlightsByNumber(int? number) =>
       (super.noSuchMethod(
         Invocation.method(
           #getFlightsByNumber,
           [number],
         ),
-        returnValue: _i4.Future<_i2.Flights>.value(_FakeFlights_0(
+        returnValue: _i4.Future<_i2.FlightsModel>.value(_FakeFlightsModel_0(
           this,
           Invocation.method(
             #getFlightsByNumber,
             [number],
           ),
         )),
-        returnValueForMissingStub: _i4.Future<_i2.Flights>.value(_FakeFlights_0(
+        returnValueForMissingStub:
+            _i4.Future<_i2.FlightsModel>.value(_FakeFlightsModel_0(
           this,
           Invocation.method(
             #getFlightsByNumber,
             [number],
           ),
         )),
-      ) as _i4.Future<_i2.Flights>);
+      ) as _i4.Future<_i2.FlightsModel>);
 }
 
 /// A class which mocks [NetworkInfo].
