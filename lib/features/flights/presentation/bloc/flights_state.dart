@@ -11,10 +11,10 @@ class Empty extends FlightsState {}
 
 class Loading extends FlightsState {}
 
-class LoadedFlights extends FlightsState {
+class Loaded extends FlightsState {
   final Flights flights;
 
-  const LoadedFlights({required this.flights});
+  const Loaded({required this.flights});
 
   @override
   List<Object> get props => [flights];
