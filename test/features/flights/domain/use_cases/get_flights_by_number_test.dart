@@ -25,22 +25,20 @@ void main() {
 
   const tNumber = 1;
 
+  final tJuncture = Juncture(
+    airport: 'Test',
+    estimated: DateTime(2023),
+    iata: 'Test',
+    scheduled: DateTime(2023),
+    timezone: 'Test',
+  );
+
   final tFlights = Flights(flights: [
     Flight(
       airline: const Airline(name: 'Test'),
-      arrival: Juncture(
-        airport: 'Test',
-        estimated: DateTime(2023),
-        scheduled: DateTime(2023),
-        timezone: 'Test',
-      ),
+      arrival: tJuncture,
       date: DateTime(2023),
-      departure: Juncture(
-        airport: 'Test',
-        estimated: DateTime(2023),
-        scheduled: DateTime(2023),
-        timezone: 'Test',
-      ),
+      departure: tJuncture,
       status: 'Test',
       flightDescription: const FlightDescription(number: 1),
     )

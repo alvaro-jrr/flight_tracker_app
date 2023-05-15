@@ -4,6 +4,7 @@ class JunctureModel extends Juncture {
   const JunctureModel({
     required super.airport,
     required super.estimated,
+    required super.iata,
     required super.scheduled,
     required super.timezone,
     super.actual,
@@ -15,6 +16,7 @@ class JunctureModel extends Juncture {
     return JunctureModel(
       airport: json['airport'],
       estimated: DateTime.parse(json['estimated']),
+      iata: json['iata'],
       scheduled: DateTime.parse(json['scheduled']),
       timezone: json['timezone'],
       actual: json['actual'] != null ? DateTime.parse(json['actual']) : null,

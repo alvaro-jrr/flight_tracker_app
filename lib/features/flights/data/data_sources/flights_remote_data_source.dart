@@ -30,6 +30,7 @@ class FlightsRemoteDataSourceImpl implements FlightsRemoteDataSource {
           '/v1/flights',
           {
             'access_key': Env.aviationStackApiKey,
+            'limit': '25',
             'flight_number': '$number',
           },
         ),

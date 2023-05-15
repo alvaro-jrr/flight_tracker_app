@@ -40,6 +40,7 @@ void main() {
   final tJuncture = Juncture(
     airport: 'Test',
     estimated: DateTime.parse('2019-12-12T04:20:00+00:00'),
+    iata: 'Test',
     timezone: 'Test',
     scheduled: DateTime.parse('2019-12-12T04:20:00+00:00'),
     actual: null,

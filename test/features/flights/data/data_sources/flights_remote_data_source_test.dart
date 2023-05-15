@@ -31,6 +31,7 @@ void main() {
   final tJuncture = JunctureModel(
     airport: 'Test',
     estimated: DateTime.parse('2019-12-12T04:20:00+00:00'),
+    iata: 'Test',
     timezone: 'Test',
     scheduled: DateTime.parse('2019-12-12T04:20:00+00:00'),
     actual: null,
@@ -75,6 +76,7 @@ void main() {
               '/v1/flights',
               {
                 'access_key': Env.aviationStackApiKey,
+                'limit': '25',
                 'flight_number': '$tNumber',
               },
             ),
