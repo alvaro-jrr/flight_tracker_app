@@ -15,7 +15,14 @@ class FlightsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Seguimiento de Vuelos'),
+        backgroundColor: Colors.teal,
+        scrolledUnderElevation: 0,
+        title: const Text(
+          'Seguimiento de Vuelos',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       body: BlocProvider(
         create: (_) => di.sl<FlightsBloc>(),
@@ -34,13 +41,34 @@ class _Body extends StatelessWidget {
       padding: const EdgeInsets.all(24.0),
       child: Column(
         children: const [
-          Text(
-            'Busca cualquier vuelo a nivel mundial y conoce su estatus actual.',
-          ),
-          SizedBox(height: 24),
           FlightsSearchField(),
+          SizedBox(height: 24),
+          _BodyContent(),
         ],
       ),
+    );
+  }
+}
+
+class _BodyContent extends StatelessWidget {
+  const _BodyContent();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<FlightsBloc, FlightsState>(
+      builder: (context, state) {
+        if (state is Loading) {
+          return const CircularProgressIndicator();
+        }
+
+        if (state is Error) return Text(state.message);
+
+        if (state is Loaded) {
+          return Expanded(child: FlightsList(state.flights));
+        }
+
+        return const Text('No has buscado vuelos aún');
+      },
     );
   }
 }
