@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:intl/intl.dart';
-
 import 'package:flight_tracker_app/features/flights/domain/entities/flight.dart';
-import 'package:flight_tracker_app/features/flights/domain/entities/juncture.dart';
+import 'package:flight_tracker_app/features/flights/presentation/widgets/widgets.dart';
 
 class FlightCard extends StatelessWidget {
   final Flight flight;
@@ -13,29 +11,17 @@ class FlightCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0,
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: Colors.grey.shade300),
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(child: _JunctureHeader(flight.departure)),
-                const SizedBox(width: 16),
-                const Icon(Icons.arrow_forward_rounded),
-                const SizedBox(width: 16),
-                Expanded(child: _JunctureHeader(flight.arrival)),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Text(
-              flight.airline.name,
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(DateFormat.yMd('es').format(flight.date)),
+            _Junctures(flight: flight),
           ],
         ),
       ),
@@ -43,29 +29,36 @@ class FlightCard extends StatelessWidget {
   }
 }
 
-class _JunctureHeader extends StatelessWidget {
-  final Juncture juncture;
+class _Junctures extends StatelessWidget {
+  const _Junctures({
+    required this.flight,
+  });
 
-  const _JunctureHeader(this.juncture);
+  final Flight flight;
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          juncture.iata,
-          style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+        Expanded(
+          child: JunctureDescription(
+            juncture: flight.departure,
+            align: DescriptionAlign.left,
+          ),
         ),
-        const SizedBox(height: 8),
-        if (juncture.airport != null)
-          Text(
-            juncture.airport!,
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.clip,
-            maxLines: 1,
-          )
+        const SizedBox(width: 16),
+        const Icon(
+          Icons.arrow_forward_rounded,
+          color: Colors.grey,
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: JunctureDescription(
+            juncture: flight.arrival,
+            align: DescriptionAlign.right,
+          ),
+        ),
       ],
     );
   }

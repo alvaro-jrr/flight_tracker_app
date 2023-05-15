@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Flight Tracker App',
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.teal,
+        colorSchemeSeed: Colors.blue,
       ),
       initialRoute: FlightsPage.routeName,
       routes: {

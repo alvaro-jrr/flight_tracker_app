@@ -13,6 +13,8 @@ class FlightsList extends StatelessWidget {
     final data = flights.flights;
 
     return ListView.separated(
+      primary: false,
+      shrinkWrap: true,
       itemBuilder: (context, index) => FlightCard(data[index]),
       separatorBuilder: (context, index) => const SizedBox(height: 16),
       itemCount: data.length,

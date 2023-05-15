@@ -15,7 +15,7 @@ class FlightsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.blue,
         scrolledUnderElevation: 0,
         title: const Text(
           'Seguimiento de Vuelos',
@@ -37,7 +37,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(24.0),
       child: Column(
         children: const [
@@ -63,9 +63,7 @@ class _BodyContent extends StatelessWidget {
 
         if (state is Error) return Text(state.message);
 
-        if (state is Loaded) {
-          return Expanded(child: FlightsList(state.flights));
-        }
+        if (state is Loaded) return FlightsList(state.flights);
 
         return const Text('No has buscado vuelos aún');
       },
