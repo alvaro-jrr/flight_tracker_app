@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flight_tracker_app/core/utils/utils.dart';
 import 'package:flight_tracker_app/features/flights/domain/entities/flight.dart';
 import 'package:flight_tracker_app/features/flights/presentation/widgets/widgets.dart';
 
@@ -43,23 +44,40 @@ class _Header extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            Icon(
-              Icons.flight,
-              color: Theme.of(context).primaryColor,
-            ),
-            const SizedBox(width: 4),
-            Text(
-              flight.airline.name,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+        Expanded(
+          child: Row(
+            children: [
+              Icon(
+                Icons.flight,
                 color: Theme.of(context).primaryColor,
               ),
-            ),
-          ],
+              const SizedBox(width: 4),
+              Text(
+                flight.airline.name,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+            ],
+          ),
         ),
-        Text(flight.status),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+          alignment: Alignment.center,
+          decoration: ShapeDecoration(
+            shape: const StadiumBorder(),
+            color: Theme.of(context).primaryColor.withOpacity(0.05),
+          ),
+          child: Text(
+            toTitleCase(flight.status),
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
       ],
     );
   }
