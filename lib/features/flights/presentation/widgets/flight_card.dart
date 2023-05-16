@@ -41,6 +41,8 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).primaryColor;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -49,15 +51,18 @@ class _Header extends StatelessWidget {
             children: [
               Icon(
                 Icons.flight,
-                color: Theme.of(context).primaryColor,
+                color: primaryColor,
               ),
               const SizedBox(width: 4),
-              Text(
-                flight.airline.name,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).primaryColor,
+              Expanded(
+                child: Text(
+                  flight.airline.name,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: primaryColor,
+                  ),
                 ),
               ),
             ],
@@ -68,13 +73,13 @@ class _Header extends StatelessWidget {
           alignment: Alignment.center,
           decoration: ShapeDecoration(
             shape: const StadiumBorder(),
-            color: Theme.of(context).primaryColor.withOpacity(0.05),
+            color: primaryColor.withOpacity(0.05),
           ),
           child: Text(
             toTitleCase(flight.status),
             style: TextStyle(
               fontWeight: FontWeight.w500,
-              color: Theme.of(context).primaryColor,
+              color: primaryColor,
             ),
           ),
         ),

@@ -45,7 +45,7 @@ class JunctureDescription extends StatelessWidget {
             Icon(icon, size: 16, color: Colors.grey.shade600),
             const SizedBox(width: 4),
             Text(
-              DateFormat.yMMMMd().format(juncture.estimated),
+              DateFormat.yMMMd('es').format(juncture.estimated),
               style: TextStyle(
                 color: Colors.grey.shade600,
               ),
