@@ -1,0 +1,12 @@
+{
+    "icao": "Test",
+    "iata": "Test",
+    "name": "Test",
+    "city": "Test",
+    "region": "Test",
+    "country": "Test",
+    "elevation_ft": "1",
+    "latitude": "1.0",
+    "longitude": "1.0",
+    "timezone": "Test"
+}
