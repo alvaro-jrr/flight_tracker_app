@@ -1,0 +1,15 @@
+{
+	"airport": "Test",
+	"timezone": "Test",
+	"iata": "Test",
+	"icao": "Test",
+	"terminal": "Test",
+	"gate": "Test",
+	"baggage": "Test",
+	"delay": 0,
+	"scheduled": "2019-12-12T04:20:00+00:00",
+	"estimated": "2019-12-12T04:20:00+00:00",
+	"actual": null,
+	"estimated_runway": null,
+	"actual_runway": null
+}
