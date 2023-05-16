@@ -9,7 +9,7 @@ import 'package:flight_tracker_app/features/flights/domain/use_cases/get_flights
 part 'flights_event.dart';
 part 'flights_state.dart';
 
-const invalidInputMessage = 'Debe ingresar un número mayor que 0';
+const invalidInputMessage = 'Debe ingresar un número entero positivo';
 
 class FlightsBloc extends Bloc<FlightsEvent, FlightsState> {
   final GetFlightsByNumber getFlightsByNumber;
