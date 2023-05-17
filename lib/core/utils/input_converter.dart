@@ -13,6 +13,16 @@ class InputConverter {
 
     return Right(integer);
   }
+
+  Either<Failure, String> stringToCountryCode(String str) {
+    str = str.trim();
+
+    if (str.isEmpty || str.length > 2) {
+      return Left(InvalidInputFailure());
+    }
+
+    return Right(str);
+  }
 }
 
 class InvalidInputFailure extends Failure {
