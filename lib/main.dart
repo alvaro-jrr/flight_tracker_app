@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
 
+import 'package:flight_tracker_app/features/airports/presentation/pages/pages.dart';
 import 'package:flight_tracker_app/features/flights/presentation/pages/pages.dart';
 import 'package:flight_tracker_app/injection_container.dart' as di;
 
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         colorSchemeSeed: Colors.blue,
       ),
-      initialRoute: FlightsPage.routeName,
+      initialRoute: AirportsPage.routeName,
       routes: {
         FlightsPage.routeName: (context) => const FlightsPage(),
+        AirportsPage.routeName: (context) => const AirportsPage(),
       },
     );
   }
