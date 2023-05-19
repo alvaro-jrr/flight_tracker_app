@@ -15,14 +15,7 @@ class FlightsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        scrolledUnderElevation: 0,
-        title: const Text(
-          'Seguimiento de Vuelos',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+        title: const Text('Seguimiento de Vuelos'),
       ),
       body: BlocProvider(
         create: (_) => di.sl<FlightsBloc>(),

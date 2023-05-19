@@ -19,6 +19,7 @@ class JunctureDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+
     const verticalSpacing = 6.0;
 
     // Set up alignment.

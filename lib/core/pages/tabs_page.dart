@@ -30,25 +30,13 @@ class _TabsPageState extends State<TabsPage> {
         ],
         selectedIndex: currentPageIndex,
         onDestinationSelected: (index) {
-          setState(() {
-            currentPageIndex = index;
-
-            pageController.animateToPage(
-              index,
-              duration: const Duration(milliseconds: 250),
-              curve: Curves.decelerate,
-            );
-          });
+          setState(() => currentPageIndex = index);
         },
       ),
-      body: PageView(
-        controller: pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: const [
-          FlightsPage(),
-          AirportsPage(),
-        ],
-      ),
+      body: const [
+        FlightsPage(),
+        AirportsPage(),
+      ][currentPageIndex],
     );
   }
 }

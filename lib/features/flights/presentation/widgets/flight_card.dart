@@ -50,7 +50,7 @@ class _Header extends StatelessWidget {
           child: Row(
             children: [
               Icon(
-                Icons.flight,
+                Icons.airlines,
                 color: primaryColor,
               ),
               const SizedBox(width: 4),
