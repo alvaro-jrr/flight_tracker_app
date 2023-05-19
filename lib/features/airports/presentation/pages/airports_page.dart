@@ -15,7 +15,14 @@ class AirportsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Búsqueda de Aeropuertos'),
+        backgroundColor: Colors.blue,
+        scrolledUnderElevation: 0,
+        title: const Text(
+          'Búsqueda de Aeropuertos',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       body: BlocProvider(
         create: (context) => di.sl<AirportsBloc>(),
