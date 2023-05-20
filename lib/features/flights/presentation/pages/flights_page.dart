@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flight_tracker_app/features/flights/presentation/bloc/flights_bloc.dart';
 import 'package:flight_tracker_app/features/flights/presentation/widgets/widgets.dart';
-import 'package:flight_tracker_app/injection_container.dart' as di;
 
 class FlightsPage extends StatelessWidget {
   static const routeName = 'flights';
@@ -17,10 +16,7 @@ class FlightsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Seguimiento de Vuelos'),
       ),
-      body: BlocProvider(
-        create: (_) => di.sl<FlightsBloc>(),
-        child: const _Body(),
-      ),
+      body: const _Body(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:circle_flags/circle_flags.dart';
 
+import 'package:flight_tracker_app/core/widgets/widgets.dart';
 import 'package:flight_tracker_app/features/airports/domain/entities/airport.dart';
 
 class AirportCard extends StatelessWidget {
@@ -14,13 +15,7 @@ class AirportCard extends StatelessWidget {
     final primaryColor = Theme.of(context).primaryColor;
     final secondaryColor = Theme.of(context).colorScheme.secondary;
 
-    return Card(
-      elevation: 0,
-      margin: EdgeInsets.zero,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: Colors.grey.shade300),
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
-      ),
+    return OutlinedCard(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
