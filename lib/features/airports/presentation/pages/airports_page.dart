@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flight_tracker_app/features/flights/presentation/bloc/flights_bloc.dart';
-import 'package:flight_tracker_app/features/flights/presentation/widgets/widgets.dart';
+import 'package:flight_tracker_app/features/airports/presentation/bloc/airports_bloc.dart';
+import 'package:flight_tracker_app/features/airports/presentation/widgets/widgets.dart';
 
-class FlightsPage extends StatelessWidget {
-  static const routeName = 'flights';
+class AirportsPage extends StatelessWidget {
+  static const routeName = 'airports';
 
-  const FlightsPage({super.key});
+  const AirportsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Seguimiento de Vuelos'),
+        title: const Text('Búsqueda de Aeropuertos'),
       ),
       body: const _Body(),
     );
@@ -30,7 +30,7 @@ class _Body extends StatelessWidget {
       padding: const EdgeInsets.all(24.0),
       child: Column(
         children: const [
-          FlightsSearchField(),
+          AirportsSearchField(),
           SizedBox(height: 24),
           _BodyContent(),
         ],
@@ -44,7 +44,7 @@ class _BodyContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FlightsBloc, FlightsState>(
+    return BlocBuilder<AirportsBloc, AirportsState>(
       builder: (context, state) {
         if (state is Loading) {
           return const CircularProgressIndicator();
@@ -52,9 +52,9 @@ class _BodyContent extends StatelessWidget {
 
         if (state is Error) return Text(state.message);
 
-        if (state is Loaded) return FlightsList(state.flights);
+        if (state is Loaded) return AirportsList(state.airports);
 
-        return const Text('No has buscado vuelos aún');
+        return const Text('No has buscado aeropuertos aún');
       },
     );
   }

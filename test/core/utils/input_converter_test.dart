@@ -53,4 +53,48 @@ void main() {
       },
     );
   });
+
+  group('stringToCountryCode', () {
+    test(
+      'should be a two-letter code',
+      () async {
+        // arrange
+        const str = 'ab';
+
+        // act
+        final result = inputConverter.stringToCountryCode(str);
+
+        // assert
+        expect(result, const Right(str));
+      },
+    );
+
+    test(
+      'should return a Failure when the string is empty',
+      () async {
+        // arrange
+        const str = '';
+
+        // act
+        final result = inputConverter.stringToCountryCode(str);
+
+        // assert
+        expect(result, Left(InvalidInputFailure()));
+      },
+    );
+
+    test(
+      'should return a Failure when the string is not a two-letter code',
+      () async {
+        // arrange
+        const str = 'abc';
+
+        // act
+        final result = inputConverter.stringToCountryCode(str);
+
+        // assert
+        expect(result, Left(InvalidInputFailure()));
+      },
+    );
+  });
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flight_tracker_app/core/utils/utils.dart';
+import 'package:flight_tracker_app/core/widgets/widgets.dart';
 import 'package:flight_tracker_app/features/flights/domain/entities/flight.dart';
 import 'package:flight_tracker_app/features/flights/presentation/widgets/widgets.dart';
 
@@ -11,13 +12,7 @@ class FlightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      margin: EdgeInsets.zero,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: Colors.grey.shade300),
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
-      ),
+    return OutlinedCard(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -50,7 +45,7 @@ class _Header extends StatelessWidget {
           child: Row(
             children: [
               Icon(
-                Icons.flight,
+                Icons.airlines,
                 color: primaryColor,
               ),
               const SizedBox(width: 4),
