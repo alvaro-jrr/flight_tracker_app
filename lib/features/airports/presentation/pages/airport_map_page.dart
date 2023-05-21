@@ -22,6 +22,7 @@ class _AirportMapPageState extends State<AirportMapPage> {
   @override
   Widget build(BuildContext context) {
     final airport = ModalRoute.of(context)!.settings.arguments as Airport;
+
     final position = LatLng(
       airport.latitude,
       airport.longitude,
@@ -30,7 +31,7 @@ class _AirportMapPageState extends State<AirportMapPage> {
     final initialPosition = CameraPosition(
       target: position,
       zoom: 16,
-      tilt: 50,
+      tilt: 32,
     );
 
     final markers = <Marker>{};
@@ -54,10 +55,12 @@ class _AirportMapPageState extends State<AirportMapPage> {
               controller.animateCamera(CameraUpdate.newLatLng(position));
             },
             icon: const Icon(Icons.gps_not_fixed),
+            tooltip: 'Volver a posición inicial',
           )
         ],
       ),
       body: GoogleMap(
+        mapType: MapType.hybrid,
         initialCameraPosition: initialPosition,
         markers: markers,
         onMapCreated: (controller) => _controller.complete(controller),
