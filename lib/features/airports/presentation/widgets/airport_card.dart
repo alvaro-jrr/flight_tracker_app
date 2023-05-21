@@ -4,7 +4,6 @@ import 'package:circle_flags/circle_flags.dart';
 
 import 'package:flight_tracker_app/core/widgets/widgets.dart';
 import 'package:flight_tracker_app/features/airports/domain/entities/airport.dart';
-import 'package:flight_tracker_app/features/airports/presentation/pages/airport_map_page.dart';
 
 class AirportCard extends StatelessWidget {
   final Airport airport;
@@ -20,7 +19,7 @@ class AirportCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -68,17 +67,6 @@ class AirportCard extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            const SizedBox(height: 8),
-            FilledButton.tonal(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  AirportMapPage.routeName,
-                  arguments: airport,
-                );
-              },
-              child: const Text('Mostrar ubicación'),
             )
           ],
         ),

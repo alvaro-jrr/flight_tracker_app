@@ -6,8 +6,6 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:flight_tracker_app/core/pages/pages.dart';
 import 'package:flight_tracker_app/core/themes/app_theme.dart';
 import 'package:flight_tracker_app/features/airports/presentation/bloc/airports_bloc.dart';
-import 'package:flight_tracker_app/features/airports/presentation/pages/airports_page.dart';
-import 'package:flight_tracker_app/features/airports/presentation/pages/pages.dart';
 import 'package:flight_tracker_app/features/flights/presentation/bloc/flights_bloc.dart';
 import 'package:flight_tracker_app/injection_container.dart' as di;
 
@@ -40,9 +38,6 @@ class MyApp extends StatelessWidget {
         ],
         child: const TabsPage(),
       ),
-      routes: {
-        AirportMapPage.routeName: (context) => const AirportMapPage(),
-      },
     );
   }
 }
